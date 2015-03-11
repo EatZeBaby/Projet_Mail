@@ -22,9 +22,7 @@ public class Ceremonie {
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    
 	    
-	    
 	    // Getter Setters
-	    
 	    public String getNomCeremonie() {
 	        return nomCeremonie;
 	    }
@@ -74,9 +72,6 @@ public class Ceremonie {
 	    // Sans invités
 	     public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie) throws Exception
 	     {
-	        
-	        
-	         
 	        this.nomCeremonie = nomCeremonie;
 	        this.lieuxCeremonie = lieuxCeremonie;
 	        this.dateDebutCeremonie = dateDebutCeremonie;

@@ -1,5 +1,5 @@
 package cinema;
 
-public class Acteur {
+public class Acteur extends Personne{
 
 }
