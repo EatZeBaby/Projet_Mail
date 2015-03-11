@@ -5,14 +5,12 @@ import java.util.ArrayList;
 public class Realisateur extends Personne{
 	private ArrayList<Film> listeFilms;
 	private ArrayList<Prix> listePrix;
-	private ArrayList<Ceremonie> listeCeremonies;
 
 	public Realisateur(String n, String p, String a, String nat) {
 		super(n, p, a, nat);
 		// TODO Auto-generated constructor stub
 		listeFilms = new ArrayList<Film>();
 		listePrix = new ArrayList<Prix> ();
-		listeCeremonies = new ArrayList<Ceremonie>();
 	}
 	
 	// todo : ajouter des méthodes pour accepter/refuser cérémonie
@@ -22,10 +20,6 @@ public class Realisateur extends Personne{
 	
 	public void ajouterPrix(Prix p){
 		listePrix.add(p);
-	}
-	
-	public void ajouterCeremonie(Ceremonie c){
-		listeCeremonies.add(c);
 	}
 
 	public ArrayList<Film> getListeFilms() {

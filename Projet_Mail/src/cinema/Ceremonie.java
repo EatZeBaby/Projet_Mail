@@ -19,21 +19,29 @@ public class Ceremonie {
 	    private Date dateFinCeremonie;
 	    private boolean cloture;
 	    private List<Acteur> listeActeursPresents;
+	    private List<Realisateur> listeRealPresents;
 	    
 	    // Liste contenant toutes les cÃ©rÃ©monies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    
 	    //fonctions IT02 : gestion des invitations (côté Cérémonie)
 	    public void inviterPersonne (Personne p){
-	    	
+	    	//L'académie peut refuser une invitation, mais les règles d'étiquette interdisent l'inverse
+	    	p.accepterInvitation(this);
 	    }
 	    
 	    public void accepterInvitation(Personne p){
-	    	
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été acceptée");
+	    	if (p instanceof Realisateur){
+	    		listeRealPresents.add((Realisateur) p);
+	    	}
+	    	else{
+	    		listeActeursPresents.add((Acteur)p);
+	    	}
 	    }
 	    
 	    public void refuserInvitation(Personne p){
-	    	
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été refusée");
 	    }
 	    
 	    // Getter Setters
