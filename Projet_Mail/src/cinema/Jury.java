@@ -10,9 +10,10 @@ public class Jury {
 	private int annee;
 	
 	public void  getListeDesMembresDuJury() {
-		System.out.println("Les membre du jury de la Ceremonie" + nomCeremonie + );
+		System.out.println("Les membres du jury de la Ceremonie" + nomCeremonie + "sont :");
 		for(Personne membre: this.ListeDesMembresDuJury){
-			System.out.println(membre.getPrenom());
+			System.out.println(membre.getPrenom()+" "+membre.getPrenom());
+			
 			} ;
 	}
 	public void setListeDesMembresDuJury(ArrayList <Personne> listeDesMembresDuJury) {
