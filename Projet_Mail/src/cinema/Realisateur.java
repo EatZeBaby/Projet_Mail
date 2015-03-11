@@ -15,6 +15,7 @@ public class Realisateur extends Personne{
 		listeCeremonies = new ArrayList<Ceremonie>();
 	}
 	
+	// todo : ajouter des méthodes pour accepter/refuser cérémonie
 	public void ajouterFilm(Film f){
 		listeFilms.add(f);
 	}
