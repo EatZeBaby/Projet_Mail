@@ -1,6 +1,12 @@
 package cinema;
 
-public class Acteur {
+public class Acteur extends Personne{
+	
+	
+	public Acteur(String n, String p, String a, String nat) {
+		super(n, p, a, nat);
+		// TODO Auto-generated constructor stub
+	}
 	private String nom;
 	private String prenom;
 	private String nationalite;
@@ -25,5 +31,4 @@ public class Acteur {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
 }
