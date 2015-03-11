@@ -17,13 +17,34 @@ public class Ceremonie {
 	    private Personne presidentCeremonie;
 	    private Date dateDebutCeremonie;
 	    private Date dateFinCeremonie;
+	    private boolean cloture;
 	    private List<Acteur> listeActeursPresents;
 	    
 	    // Liste contenant toutes les cÃ©rÃ©monies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    
+	    //fonctions IT02 : gestion des invitations (côté Cérémonie)
+	    public void inviterPersonne (Personne p){
+	    	
+	    }
+	    
+	    public void accepterInvitation(Personne p){
+	    	
+	    }
+	    
+	    public void refuserInvitation(Personne p){
+	    	
+	    }
 	    
 	    // Getter Setters
+	    public boolean getCloture(){
+	    	return this.cloture;
+	    }
+	    
+	    public void cloturerCeremonie(){
+	    	this.cloture = true;
+	    }
+	    
 	    public String getNomCeremonie() {
 	        return nomCeremonie;
 	    }
@@ -73,6 +94,7 @@ public class Ceremonie {
 	    // Sans invitÃ©s
 	     public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie) throws Exception
 	     {
+	    	this.cloture = false;
 	        this.nomCeremonie = nomCeremonie;
 	        this.lieuxCeremonie = lieuxCeremonie;
 	        this.dateDebutCeremonie = dateDebutCeremonie;
