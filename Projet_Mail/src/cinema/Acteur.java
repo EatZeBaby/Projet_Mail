@@ -3,32 +3,43 @@ package cinema;
 import java.util.ArrayList;
 
 public class Acteur extends Personne{
+	private ArrayList<Film> listeFilms;
+	private ArrayList<Prix> listePrix;
+	private ArrayList<Ceremonie> listeCeremonies;
+	
+
 	public Acteur(String n, String p, String a, String nat) {
 		super(n, p, a, nat);
-		// TODO Auto-generated constructor stub
+		listeFilms = new ArrayList<Film>();
+		listePrix = new ArrayList<Prix> ();
+		listeCeremonies = new ArrayList<Ceremonie>();
 	}
-	private String nom;
-	private String prenom;
-	private String nationalite;
 	
+	public void ajouterFilm(Film f){
+		listeFilms.add(f);
+	}
 	
+	public void ajouterPrix(Prix p){
+		listePrix.add(p);
+	}
 	
-	public String getNationalite() {
-		return nationalite;
+	public void ajouterCeremonie(Ceremonie c){
+		listeCeremonies.add(c);
 	}
-	public void setNationalite(String nationalite) {
-		this.nationalite = nationalite;
+
+	public ArrayList<Film> getListeFilms() {
+		return listeFilms;
 	}
-	public String getPrenom() {
-		return prenom;
+
+	public void setListeFilms(ArrayList<Film> listeFilms) {
+		this.listeFilms = listeFilms;
 	}
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+
+	public ArrayList<Prix> getListePrix() {
+		return listePrix;
 	}
-	public String getNom() {
-		return nom;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
+
+	public void setListePrix(ArrayList<Prix> listePrix) {
+		this.listePrix = listePrix;
 	}
 }
