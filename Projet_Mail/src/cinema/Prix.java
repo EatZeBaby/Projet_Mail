@@ -15,8 +15,7 @@ public class Prix {
 
 		private Ceremonie ceremoniePrix;
 	    private int annee;
-	    private Acteur acteurVainqueur;
-	    private Realisateur realisateurVainqueur;
+	    private Personne personneVainqueur;
 	    
 	    
 	    // Constructeur
@@ -66,39 +65,29 @@ public class Prix {
 		}
 
 
-		public Acteur getActeurVainqueur() {
-			return acteurVainqueur;
+		public Personne getPersonneVainqueur() {
+			return personneVainqueur;
 		}
 
 
-		public void setActeurVainqueur(Acteur acteurVainqueur) {
-			this.acteurVainqueur = acteurVainqueur;
+		public void setPersonneVainqueur(Personne personneVainqueur) {
+			this.personneVainqueur = personneVainqueur;
 		}
 
 
-		public Realisateur getRealisateurVainqueur() {
-			return realisateurVainqueur;
-		}
+	
 
-
-		public void setRealisateurVainqueur(Realisateur realisateurVainqueur) {
-			this.realisateurVainqueur = realisateurVainqueur;
-		}
-	    
-
-	  
-	    
 	    
 	    // Méthode pour attributer un prix
 	    
-	    public void AttribuerPrix(Acteur unActeurGagnant)
+	    public void AttribuerPrix(Personne unePersonneVainqueur)
 	    {
 	        // On vérifie que le prix n'est pas déjà attribué
 	        try
 	        {      
-	                if (this.getActeurVainqueur() != null)
+	                if (this.getPersonneVainqueur() != null)
 	                {
-	                   this.setActeurVainqueur(unActeurGagnant);
+	                   this.setPersonneVainqueur(unePersonneVainqueur);
 	                }   
 	                else
 	                {
@@ -113,26 +102,6 @@ public class Prix {
 	    }
 	     
 	    
-	    public void AttribuerPrix(Realisateur unRealisateurGagnant)
-	    {
-	        // On vérifie que le prix n'est pas déjà attribué
-	        try
-	        {      
-	                if (this.getRealisateurVainqueur() != null)
-	                {
-	                   this.setRealisateurVainqueur(unRealisateurGagnant);
-	                }   
-	                else
-	                {
-	                	System.out.println("Ce prix est déjà attribué");
-	                }
-	           
-	        }
-	        catch (Exception Ex)
-	        {
-	            Ex.getMessage();
-	        }
-	    }
 	        
 	 
 	
