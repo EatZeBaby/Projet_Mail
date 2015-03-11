@@ -9,13 +9,10 @@ public class Prix {
 	    
 	    // Attributs
 	    
-	    
-	   
-
-
 		private Ceremonie ceremoniePrix;
 	    private int annee;
 	    private Personne personneVainqueur;
+	    private Film filmRecompense;
 	    
 	    
 	    // Constructeur
@@ -35,9 +32,22 @@ public class Prix {
 	 
 
 
+		public Film getFilmRecompense() {
+			return filmRecompense;
+		}
+
+
+
+		public void setFilmRecompense(Film filmRecompense) {
+			this.filmRecompense = filmRecompense;
+		}
+
 		public String getTitrePrix() {
 			return titrePrix;
 		}
+
+
+
 
 
 		public void setTitrePrix(String titrePrix) {
@@ -80,7 +90,7 @@ public class Prix {
 	    
 	    // Méthode pour attributer un prix
 	    
-	    public void AttribuerPrix(Personne unePersonneVainqueur)
+	    public void AttribuerPrix(Personne unePersonneVainqueur, Film filmRecompense)
 	    {
 	        // On vérifie que le prix n'est pas déjà attribué
 	        try
@@ -88,6 +98,9 @@ public class Prix {
 	                if (this.getPersonneVainqueur() != null)
 	                {
 	                   this.setPersonneVainqueur(unePersonneVainqueur);
+	                   // On ajoute le prix au film récompensé
+	                   this.filmRecompense = filmRecompense;
+	                   filmRecompense.getListePrix().add(this);
 	                }   
 	                else
 	                {
