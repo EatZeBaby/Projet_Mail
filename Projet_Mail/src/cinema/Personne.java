@@ -41,7 +41,7 @@ public class Personne {
 		return nationalite;
 	}
 
-	public void setNationalite(String nationalité) {
-		this.nationalite = nationalité;
+	public void setNationalite(String nationalite) {
+		this.nationalite = nationalite;
 	}
 }
