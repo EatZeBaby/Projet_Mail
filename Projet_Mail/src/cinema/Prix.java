@@ -98,7 +98,7 @@ public class Prix {
 	                if (this.getPersonneVainqueur() != null)
 	                {
 	                   this.setPersonneVainqueur(unePersonneVainqueur);
-	                   // On ajoute le prix au film récompensé
+	                   // On ajoute le prix au film récompensé.
 	                   this.filmRecompense = filmRecompense;
 	                   filmRecompense.getListePrix().add(this);
 	                }   
