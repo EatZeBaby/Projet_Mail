@@ -51,6 +51,7 @@ public class Ceremonie {
 	    
 	    public void cloturerCeremonie(){
 	    	this.cloture = true;
+	    	//afficher un récapitulatif de la cérémonie ?
 	    }
 	    
 	    public String getNomCeremonie() {

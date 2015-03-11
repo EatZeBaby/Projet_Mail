@@ -37,4 +37,26 @@ public class Acteur extends Personne{
 	public void setListePrix(ArrayList<Prix> listePrix) {
 		this.listePrix = listePrix;
 	}
+	
+	/**
+	 * Affiche l'ensemble des prix remportés par l'acteur
+	 */
+	public void affichePrix(){
+		System.out.println("==========================================================");
+		System.out.println("Prix gagnés par l'acteur " + this.getPrenom() + " " + this.getNom());
+		System.out.println("==========================================================");
+		System.out.println(" ");
+		Prix p;
+		
+		for(int i = 0; i<listePrix.size();i++){
+			p = listePrix.get(i);
+			System.out.println("=========================");
+			System.out.println("Année : " + p.getAnnee());
+			System.out.println("-------------------------");
+			System.out.println("Cérémonie : " + p.getCeremoniePrix().getNomCeremonie());
+			System.out.println("-------------------------");
+			System.out.println("Titre du prix : " + p.getTitrePrix());
+			System.out.println("=========================");
+		}
+	}
 }
