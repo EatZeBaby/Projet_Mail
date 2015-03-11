@@ -14,6 +14,7 @@ public class Ceremonie {
 	    
 	    private String nomCeremonie;
 	    private String lieuxCeremonie;
+	    private Personne presidentCeremonie;
 	    private Date dateDebutCeremonie;
 	    private Date dateFinCeremonie;
 	    private List<Acteur> listeActeursPresents;
