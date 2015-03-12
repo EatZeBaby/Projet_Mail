@@ -26,7 +26,7 @@ public class Ceremonie {
 	    
 	    // Liste contenant toutes les cérémonies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
-	    //Liste contenant tous les prix accord�s
+	    //Liste contenant tous les prix accordés
 	    private ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
 	    
@@ -38,7 +38,10 @@ public class Ceremonie {
 	    			val=i;
 	    		}
 	    	}
-	    	if (val==-1){
+	    	if(this.jury.appartient(personne)){
+	    		System.out.println(personne.getPrenom()+" "+personne.getNom()+" ne peut pas recevoir le prix " + prix.getTitrePrix() + " car il fait partie du jury de " +this.jury.getNomCeremonie()+" "+ this.jury.getAnnee());
+	    	}
+	    	else if (val==-1){
 	    		System.out.println("Le prix n'existe pas pour cette cérémonie.");
 	    	}else{
 	    		this.listePrix.get(val).AttribuerPrix(personne, film);

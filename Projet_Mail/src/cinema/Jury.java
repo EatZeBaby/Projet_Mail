@@ -15,6 +15,16 @@ public class Jury {
 		this.annee=annee;
 	}
 	
+	public boolean appartient(Personne p){
+		boolean res=false;
+		for(int i=0; i<this.ListeDesMembresDuJury.size();i++){
+			if((p.getNom()==this.ListeDesMembresDuJury.get(i).getNom())
+					&&(p.getPrenom()==this.ListeDesMembresDuJury.get(i).getPrenom())){
+				res=true;
+			}
+		}
+		return res;
+	}
 	public void  getListeDesMembresDuJury() {
 		System.out.println("Les membres du jury de la Ceremonie" + nomCeremonie + "sont :");
 		for(Personne membre: this.ListeDesMembresDuJury){
@@ -27,6 +37,10 @@ public class Jury {
 	}
 	public int getAnnee() {
 		return annee;
+	}
+	
+	public String getNomCeremonie(){
+		return this.nomCeremonie;
 	}
 	public void setAnnee(int annee) {
 		this.annee = annee;

@@ -76,7 +76,7 @@ public class Projet {
 		Prix MeilleurActeur 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Acteur");
 		Prix MeilleurActrice 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Actrice");
 		Prix MeilleurRealisateur 	= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Réalisateur");
-		Prix MeilleurScenario 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Scénario");
+		Prix MeilleurSecondRole 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Second Rôle");
 		
 		
 		
@@ -93,7 +93,7 @@ public class Projet {
 		Cannes.setPresidentCeremonie(Gus);
 		
 		
-		Cannes.ajouterAuJury(Tbow);
+		Cannes.ajouterAuJury(Gus);
 		Cannes.ajouterAuJury(Jean);
 		
 		
@@ -101,9 +101,11 @@ public class Projet {
 		Cannes.description();
 		
 		Cannes.attribuerPrix(MeilleurActeur,Matthew,Interstellar);
+		Cannes.attribuerPrix(MeilleurRealisateur,Gus,Elephant);
 		Cannes.attribuerPrix(MeilleurRealisateur,Christopher,Interstellar);
-		Cannes.attribuerPrix(MeilleurActrice,Anne,Elephant);
+		Cannes.attribuerPrix(MeilleurActrice,Anne,Interstellar);
 		Cannes.attribuerPrix(MeilleurActeur,Tbow,Interstellar);
+		Cannes.attribuerPrix(MeilleurSecondRole,Mackenzie,Interstellar);
 		
 		
 		
