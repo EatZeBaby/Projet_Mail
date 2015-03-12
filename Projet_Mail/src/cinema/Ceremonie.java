@@ -20,8 +20,6 @@ public class Ceremonie {
 	    private boolean cloture;
 	    private List<Acteur> listeActeursPresents;
 
-	    private List<Acteur> listeRealisateursPresents;
-
 	    private List<Realisateur> listeRealPresents;
 	    
 
