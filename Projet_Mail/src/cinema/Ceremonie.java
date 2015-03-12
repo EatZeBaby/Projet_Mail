@@ -29,7 +29,22 @@ public class Ceremonie {
 	    //Liste contenant tous les prix accordés
 	    private ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
-	    
+	    public boolean aInvite(Personne p){
+	    	boolean res=false;
+			for(int i=0; i<this.listeActeursPresents.size();i++){
+				if((p.getNom()==this.listeActeursPresents.get(i).getNom())
+						&&(p.getPrenom()==this.listeActeursPresents.get(i).getPrenom())){
+					res=true;
+				}
+			}
+			for(int i=0; i<this.listeRealPresents.size();i++){
+				if((p.getNom()==this.listeRealPresents.get(i).getNom())
+						&&(p.getPrenom()==this.listeRealPresents.get(i).getPrenom())){
+					res=true;
+				}
+			}
+			return res;
+	    }
 	    public void attribuerPrix(Prix prix,Personne personne,Film film){
 	    	int val=-1;
 	    	for(int i=0;i<this.listePrix.size();i++){
@@ -40,6 +55,9 @@ public class Ceremonie {
 	    	}
 	    	if(this.jury.appartient(personne)){
 	    		System.out.println(personne.getPrenom()+" "+personne.getNom()+" ne peut pas recevoir le prix " + prix.getTitrePrix() + " car il fait partie du jury de " +this.jury.getNomCeremonie()+" "+ this.jury.getAnnee());
+	    	}else if(!this.aInvite(personne)){
+	    		System.out.println(personne.getPrenom()+" "+personne.getNom()+" ne peut pas recevoir le prix " + prix.getTitrePrix() + " car il n'a pas été invité à " +this.jury.getNomCeremonie()+" "+ this.jury.getAnnee());
+
 	    	}
 	    	else if (val==-1){
 	    		System.out.println("Le prix n'existe pas pour cette cérémonie.");

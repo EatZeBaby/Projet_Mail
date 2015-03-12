@@ -14,11 +14,14 @@ public class Projet {
 		//Creation des dates de début et de fin de cérémonie
 		DateFormat dfm = new SimpleDateFormat("yyyy-MM-dd");
 		dfm.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
-		Date dateDebutCannes = dfm.parse("2015-05-26");
-		Date dateFinCannes = dfm.parse("2015-05-27");
-		Date dateElephant = dfm.parse("2003-10-03");
-		Date dateInterstellar= dfm.parse("2014-11-05");
+		Date dateDebutCannes 	= dfm.parse("2015-05-26");
+		Date dateFinCannes 		= dfm.parse("2015-05-27");
+		Date dateElephant 		= dfm.parse("2003-10-03");
+		Date dateInterstellar	= dfm.parse("2014-11-05");
+		Date dateRealite		= dfm.parse("2014-11-05");
 		
+		Date dateDebutBerlin = dfm.parse("2015-07-16");
+		Date dateFinBerlin = dfm.parse("2015-07-23");
 		
 		
 		//Création des Acteurs
@@ -34,19 +37,25 @@ public class Projet {
 		Acteur Jessica 		= new Acteur("Chastain","Jessica",37,"Américaine");
 		Acteur Michael 		= new Acteur("Caine","Michael",81,"Brittanique");
 		Acteur Mackenzie 	= new Acteur("Foy","Mackenzie",14,"Américaine");
+		Acteur Alain	 	= new Acteur("Chabat","Alain",56,"Américaine");
+		Acteur Jonathan_L	= new Acteur("Lambert","Jonathan",41,"Français");
 		
 		//Création des Realisateurs
 		Realisateur Gus 		= new Realisateur("Van Sant","Gus",55,"Américain");
 		Realisateur Christopher = new Realisateur("Nolan","Christopher",44,"Brittanique");
 		Realisateur Jonathan 	= new Realisateur("Nolan","Jonathan",38,"Brittanique");
+		Realisateur Quentin 	= new Realisateur("Dupieux","Quentin",41,"Français");
 		
 		
 		
 		//Création des liste d'acteurs et de réalisateurs
 		ArrayList<Acteur> 		listeActeursElephant 			= new ArrayList<Acteur>();
 		ArrayList<Acteur> 		listeActeursInterstellar 		= new ArrayList<Acteur>();
+		ArrayList<Acteur> 		listeActeursRealite		 		= new ArrayList<Acteur>();
+		ArrayList<Realisateur> 	listeRealisateurRealite			= new ArrayList<Realisateur>();
 		ArrayList<Realisateur> 	listeRealisateurElephant 		= new ArrayList<Realisateur>();
 		ArrayList<Realisateur> 	listeRealisateurInterstellar 	= new ArrayList<Realisateur>();
+		
 		
 
 		
@@ -62,21 +71,31 @@ public class Projet {
 		listeActeursElephant.add(Alex);
 		listeRealisateurElephant.add(Gus);
 		
+		listeActeursRealite.add(Alain);
+		listeActeursRealite.add(Jonathan_L);
+		listeRealisateurRealite.add(Quentin);
+		
 		
 		
 		//Création de Films
 		Film Elephant 		= new Film("Elephant",3000000,listeActeursElephant,listeRealisateurElephant,dateElephant);
 		Film Interstellar 	= new Film("Interstellar",165000000,listeActeursInterstellar,listeRealisateurInterstellar,dateInterstellar);
+		Film Realite	 	= new Film("Réalité",1650000,listeActeursRealite,listeRealisateurRealite,dateRealite);
 		
 		//Création de la cérémonie
 		Ceremonie Cannes 	= new Ceremonie("Festival de Cannes","Cannes", dateDebutCannes, dateFinCannes);
+		Ceremonie Berlin 	= new Ceremonie("Berlin Film Festival","Berlin", dateDebutBerlin, dateFinBerlin);
 		
 		//Création des prix
 		@SuppressWarnings("deprecation")
 		Prix MeilleurActeur 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Acteur");
 		Prix MeilleurActrice 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Actrice");
 		Prix MeilleurRealisateur 	= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Réalisateur");
-		Prix MeilleurSecondRole 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Second Rôle");
+		Prix MeilleurSecondRole 	= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Second Rôle");
+		
+		Prix BestActorBerlin 		= new Prix(Berlin,Berlin.getDateDebutCeremonie().getYear(),"Best Actor");
+		Prix BestActressBerlin 		= new Prix(Berlin,Berlin.getDateDebutCeremonie().getYear(),"Best Actress");
+		Prix BestDirector	 		= new Prix(Berlin,Berlin.getDateDebutCeremonie().getYear(),"Best Director");
 		
 		
 		
@@ -90,11 +109,16 @@ public class Projet {
 		Cannes.inviterPersonne(Mackenzie);
 		Cannes.inviterPersonne(Christopher);
 		
-		Cannes.setPresidentCeremonie(Gus);
+		Berlin.inviterPersonne(Quentin);
+		Berlin.inviterPersonne(Matthew);
+		Berlin.inviterPersonne(Alain);
+		Berlin.inviterPersonne(Jonathan_L);
 		
+		Cannes.setPresidentCeremonie(Gus);
+		Berlin.setPresidentCeremonie(Jean);
 		
 		Cannes.ajouterAuJury(Gus);
-		Cannes.ajouterAuJury(Jean);
+		Berlin.ajouterAuJury(Jean);
 		
 		
 		
@@ -112,7 +136,7 @@ public class Projet {
 		Cannes.cloturerCeremonie();
 		
 		
-		
+		Berlin.description();
 		
 	}
 	
