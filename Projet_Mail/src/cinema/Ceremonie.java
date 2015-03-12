@@ -10,22 +10,20 @@ public class Ceremonie {
 	
 
 	    // Attributs
-	   
-	    
-	    private String nomCeremonie;
-	    private String lieuxCeremonie;
-	    private Personne presidentCeremonie; 
-	    private Date dateDebutCeremonie;
-	    private Date dateFinCeremonie;
-	    private boolean cloture;
-	    private List<Acteur> listeActeursPresents;
-
-	    private List<Realisateur> listeRealPresents;
+	   	private String 				nomCeremonie;
+	    private String 				lieuxCeremonie;
+	    private Personne 			presidentCeremonie; 
+	    private Date 				dateDebutCeremonie;
+	    private Date 				dateFinCeremonie;
+	    private boolean 			cloture;
+	    private List<Acteur>		listeActeursPresents;
+	    private List<Acteur> 		listeRealisateursPresents;
+	    private List<Realisateur> 	listeRealPresents;
 	    
 
 	    // Liste contenant toutes les cÃ©rÃ©monies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
-	    //Liste contenant tous les prix accordés
+	    //Liste contenant tous les prix accordï¿½s
 	    private ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
 	    //fonctions IT02 : gestion des invitations (cï¿½tï¿½ Cï¿½rï¿½monie)
@@ -69,8 +67,8 @@ public class Ceremonie {
 	    public void recapPrix(){
 	    	Prix p;
 	    	System.out.println("=====================================================");
-	    	System.out.println("===============  fin de la cérémonie ================");
-	    	System.out.println("=============== Liste des prix donnés : =============");
+	    	System.out.println("===============  fin de la cï¿½rï¿½monie ================");
+	    	System.out.println("=============== Liste des prix donnï¿½s : =============");
 	    	System.out.println("=====================================================");
 	    	System.out.println("   ");
 	    	
