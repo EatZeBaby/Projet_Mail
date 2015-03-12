@@ -20,8 +20,11 @@ public class Ceremonie {
 	    private List<Acteur> 		listeRealisateursPresents;
 	    private List<Realisateur> 	listeRealPresents;
 	    
+
 	    // Liste contenant toutes les cérémonies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
+	    //Liste contenant tous les prix accord�s
+	    private ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
 	    //fonctions IT02 : gestion des invitations (c�t� C�r�monie)
 	    public void inviterPersonne (Personne p){
@@ -62,7 +65,15 @@ public class Ceremonie {
 	     * affiche le prix, et le nom du gagnant
 	     */
 	    public void recapPrix(){
+	    	Prix p;
+	    	System.out.println("=====================================================");
+	    	System.out.println("===============  fin de la c�r�monie ================");
+	    	System.out.println("=============== Liste des prix donn�s : =============");
+	    	System.out.println("=====================================================");
 	    	
+	    	for(int i=0;i < listePrix.size(); i++){
+	    		
+	    	}
 	    }
 	    
 	    public String getNomCeremonie() {
@@ -175,5 +186,41 @@ public class Ceremonie {
 	            Ex.getMessage();
 	        }
 	    }
+
+		public Personne getPresidentCeremonie() {
+			return presidentCeremonie;
+		}
+
+		public void setPresidentCeremonie(Personne presidentCeremonie) {
+			this.presidentCeremonie = presidentCeremonie;
+		}
+
+		public List<Realisateur> getListeRealPresents() {
+			return listeRealPresents;
+		}
+
+		public void setListeRealPresents(List<Realisateur> listeRealPresents) {
+			this.listeRealPresents = listeRealPresents;
+		}
+
+		public static List<Ceremonie> getListeCeremonies() {
+			return listeCeremonies;
+		}
+
+		public static void setListeCeremonies(List<Ceremonie> listeCeremonies) {
+			Ceremonie.listeCeremonies = listeCeremonies;
+		}
+
+		public ArrayList<Prix> getListePrix() {
+			return listePrix;
+		}
+
+		public void setListePrix(ArrayList<Prix> listePrix) {
+			this.listePrix = listePrix;
+		}
+
+		public void setCloture(boolean cloture) {
+			this.cloture = cloture;
+		}
 
 }
