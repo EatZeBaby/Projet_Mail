@@ -162,7 +162,15 @@ public class Ceremonie {
 	    // Constructeurs
 	    
 	    // Les constructeurs ne permettent pas de créer une cérémonie incorrecte (sans lieux, date etc)
-	    
+	    public Ceremonie(String nomCeremonie, String lieuxCeremonie){
+	    	this.cloture = false;
+	        this.nomCeremonie = nomCeremonie;
+	        this.lieuxCeremonie = lieuxCeremonie;
+	        this.listeActeursPresents = new ArrayList<Acteur>();
+	        this.listeRealPresents = new ArrayList<Realisateur>();
+	        
+	        
+	    }
 	    // Sans invités
 	     public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie) throws Exception
 	     {

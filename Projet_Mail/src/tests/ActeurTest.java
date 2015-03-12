@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import cinema.Acteur;
+import cinema.Ceremonie;
 import cinema.Film;
 import cinema.Prix;
 
@@ -34,28 +35,22 @@ public class ActeurTest {
 	
 	@Test
 	public void testAjouterPrix(){
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testGetListeFilms() {
-		fail("Not yet implemented"); // TODO
-	}
+		Ceremonie Cannes = new Ceremonie("Festival de Cannes","Cannes");
+		Acteur Jean = new Acteur("Dujardin","Jean",44,"Français");
+		
+		if (Jean.getListePrix().size()>0){
+			fail("Erreur creation Acteur"); 
+		}
 	
-	@Test
-	public void TestSetListeFilms() {
-		fail("Not yet implemented"); // TODO
+		Prix prix = new Prix(Cannes,2014,"Meilleur Acteur");
+		Jean.ajouterPrix(prix);
+		
+		if ((Jean.getListePrix().size()!=1)&&(Jean.getListePrix().get(0).getTitrePrix())!=prix.getTitrePrix()){
+			fail("Erreur ajout Prix"); 
+		}
 	}
 
-	@Test
-	public void testGetListePrix() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testSetListePrix() {
-		fail("Not yet implemented"); // TODO
-	}
+	
 	
 	
 
