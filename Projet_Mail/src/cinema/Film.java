@@ -115,6 +115,26 @@ public class Film {
     {
     	this.listeRealisateurs.add(UnRealisateur);
     }
+    
+    
+    // Afficher la liste des acteurs
+    public void afficherActeurs()
+    {
+    	 for  (Acteur unActeur : listeActeurs)
+         {
+                 System.out.println(" Acteur : " + unActeur.getNom() + " " + unActeur.getPrenom());  
+         }
+    }
+
+    
+	//Afficher la liste des acteurs
+	public void afficherRealisateurs()
+	{
+		 for  (Realisateur unRealisateur : listeRealisateurs)
+	     {
+	             System.out.println(" Realisateur : " + unRealisateur.getNom() + " " + unRealisateur.getPrenom());
+	     }
+	}
 
 
 

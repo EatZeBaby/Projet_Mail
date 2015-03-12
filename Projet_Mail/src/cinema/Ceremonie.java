@@ -14,16 +14,62 @@ public class Ceremonie {
 	    
 	    private String nomCeremonie;
 	    private String lieuxCeremonie;
-	    private Personne presidentCeremonie;
+	    private Personne presidentCeremonie; 
 	    private Date dateDebutCeremonie;
 	    private Date dateFinCeremonie;
+	    private boolean cloture;
 	    private List<Acteur> listeActeursPresents;
+
 	    private List<Acteur> listeRealisateursPresents;
+
+	    private List<Realisateur> listeRealPresents;
+	    
+
 	    // Liste contenant toutes les cérémonies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    
+	    //fonctions IT02 : gestion des invitations (c�t� C�r�monie)
+	    public void inviterPersonne (Personne p){
+	    	//L'acad�mie peut refuser une invitation, mais les r�gles d'�tiquette interdisent l'inverse
+	    	p.accepterInvitation(this);
+	    }
+	    
+	    public void accepterInvitation(Personne p){
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a �t� accept�e");
+	    	if (p instanceof Realisateur){
+	    		listeRealPresents.add((Realisateur) p);
+	    	}
+	    	else{
+	    		listeActeursPresents.add((Acteur)p);
+	    	}
+	    }
+	    
+	    public void refuserInvitation(Personne p){
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a �t� refus�e");
+	    }
 	    
 	    // Getter Setters
+	    public boolean getCloture(){
+	    	return this.cloture;
+	    }
+	    
+	    /**
+	     * Cl�ture de la c�r�monie (cloture = true)
+	     * et affichage des gagnants
+	     */
+	    public void cloturerCeremonie(){
+	    	this.cloture = true;
+	    	//afficher un r�capitulatif de la c�r�monie ?
+	    	recapPrix();
+	    }
+	    
+	    /**
+	     * affiche le prix, et le nom du gagnant
+	     */
+	    public void recapPrix(){
+	    	
+	    }
+	    
 	    public String getNomCeremonie() {
 	        return nomCeremonie;
 	    }
@@ -73,6 +119,7 @@ public class Ceremonie {
 	    // Sans invités
 	     public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie) throws Exception
 	     {
+	    	this.cloture = false;
 	        this.nomCeremonie = nomCeremonie;
 	        this.lieuxCeremonie = lieuxCeremonie;
 	        this.dateDebutCeremonie = dateDebutCeremonie;
