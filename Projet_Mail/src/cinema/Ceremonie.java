@@ -72,10 +72,18 @@ public class Ceremonie {
 	    	System.out.println("===============  fin de la cérémonie ================");
 	    	System.out.println("=============== Liste des prix donnés : =============");
 	    	System.out.println("=====================================================");
+	    	System.out.println("   ");
 	    	
 	    	for(int i=0;i < listePrix.size(); i++){
-	    		
+	    		p = listePrix.get(i);
+	    		System.out.println("=====================================================");
+	    		System.out.println("Titre prix : " + p.getTitrePrix());
+	    		System.out.println("-----------------------------------------------------");
+	    		System.out.println("Gagnant : " + p.getPersonneVainqueur().getPrenom() + " " + p.getPersonneVainqueur().getNom());
+	    		System.out.println("=====================================================");
 	    	}
+	    	
+	    	System.out.println();
 	    }
 	    
 	    public String getNomCeremonie() {

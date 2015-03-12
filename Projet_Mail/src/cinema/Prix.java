@@ -46,10 +46,6 @@ public class Prix {
 			return titrePrix;
 		}
 
-
-
-
-
 		public void setTitrePrix(String titrePrix) {
 			this.titrePrix = titrePrix;
 		}
