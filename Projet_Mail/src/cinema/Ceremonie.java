@@ -23,17 +23,23 @@ public class Ceremonie {
 	    private List<Realisateur> 	listeRealPresents;
 	    private Jury 				jury;
 	    
-
 	    // Liste contenant toutes les cérémonies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    //Liste contenant tous les prix accord�s
 	    private ArrayList<Prix> listePrix = new ArrayList<Prix>();
+	    
+	    
+	    
+	    
 	    
 	    //fonctions IT02 : gestion des invitations (c�t� C�r�monie)
 	    public void inviterPersonne (Personne p){
 	    	//L'acad�mie peut refuser une invitation, mais les r�gles d'�tiquette interdisent l'inverse
 	    	p.accepterInvitation(this);
 	    }
+	    
+	    
+	    
 	    
 	    public void accepterInvitation(Personne p){
 	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été acceptée");
@@ -45,9 +51,15 @@ public class Ceremonie {
 	    	}
 	    }
 	    
+	    
+	    
+	    
 	    public void refuserInvitation(Personne p){
 	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été refusée");
 	    }
+	    
+	    
+	    
 	    
 	    // Getter Setters
 	    public boolean getCloture(){
@@ -60,7 +72,7 @@ public class Ceremonie {
 	     */
 	    public void cloturerCeremonie(){
 	    	this.cloture = true;
-	    	//afficher un r�capitulatif de la c�r�monie ?
+	    	//afficher un récapitulatif de la cérémonie ?
 	    	recapPrix();
 	    }
 	    
@@ -70,8 +82,8 @@ public class Ceremonie {
 	    public void recapPrix(){
 	    	Prix p;
 	    	System.out.println("=====================================================");
-	    	System.out.println("===============  fin de la c�r�monie ================");
-	    	System.out.println("=============== Liste des prix donn�s : =============");
+	    	System.out.println("===============  fin de la cérémonie ================");
+	    	System.out.println("=============== Liste des prix donnés : =============");
 	    	System.out.println("=====================================================");
 	    	System.out.println("   ");
 	    	
@@ -123,6 +135,16 @@ public class Ceremonie {
 	        return listeActeursPresents;
 	    }
 
+
+	    // instance variables - replace the example below with your own
+	    public void setListeActeursPresents(List<Acteur> listeActeursPresents) {
+	        this.listeActeursPresents = listeActeursPresents;
+	    }
+	    
+	    
+	    
+	    
+	    //Méthodes d'affichage
 	    public void afficherActeursPresents(){
 	    	System.out.println("Les acteurs présents à la cérémonie "+ this.nomCeremonie+" sont :");
 	    	for(Acteur membre: this.listeActeursPresents){
@@ -136,10 +158,6 @@ public class Ceremonie {
 				System.out.println(membre.getPrenom()+" "+membre.getNom());
 				
 				} ;
-	    }
-	    // instance variables - replace the example below with your own
-	    public void setListeActeursPresents(List<Acteur> listeActeursPresents) {
-	        this.listeActeursPresents = listeActeursPresents;
 	    }
 	    
 	    public void description(){
@@ -159,8 +177,9 @@ public class Ceremonie {
 	    	System.out.println("du "+dateFormat.format(this.getDateDebutCeremonie())+ " au " + dateFormat.format(this.getDateFinCeremonie()));
 	    	System.out.println("==============================================");
 	    }
-	    // Constructeurs
 	    
+	    
+	    // Constructeurs
 	    // Les constructeurs ne permettent pas de créer une cérémonie incorrecte (sans lieux, date etc)
 	    public Ceremonie(String nomCeremonie, String lieuxCeremonie){
 	    	this.cloture = false;
