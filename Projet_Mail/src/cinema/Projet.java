@@ -135,7 +135,7 @@ public class Projet {
 		
 		Cannes.cloturerCeremonie();
 		
-		
+		  
 		Berlin.description();
 		
 	}
