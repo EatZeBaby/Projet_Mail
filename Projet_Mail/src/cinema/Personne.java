@@ -7,11 +7,11 @@ public class Personne {
 	private ArrayList<Prix> listePrix;
 	private String nom;
 	private String prenom;
-	private String age;
+	private int age;
 	private String nationalite;
 	private ArrayList<Ceremonie> listeCeremonies;
 	
-	public Personne(String nom, String prenom, String age, String nationalite){
+	public Personne(String nom, String prenom, int age, String nationalite){
 		setNom(nom);
 		setPrenom(prenom);
 		setAge(age);
@@ -46,11 +46,11 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 

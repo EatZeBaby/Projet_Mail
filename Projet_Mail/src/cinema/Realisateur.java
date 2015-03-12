@@ -6,7 +6,7 @@ public class Realisateur extends Personne{
 	private ArrayList<Film> listeFilms;
 	private ArrayList<Prix> listePrix;
 
-	public Realisateur(String n, String p, String a, String nat) {
+	public Realisateur(String n, String p, int a, String nat) {
 		super(n, p, a, nat);
 		// TODO Auto-generated constructor stub
 		

@@ -19,6 +19,7 @@ public class Ceremonie {
 	    private List<Acteur>		listeActeursPresents;
 	    private List<Acteur> 		listeRealisateursPresents;
 	    private List<Realisateur> 	listeRealPresents;
+	    private Jury 				jury;
 	    
 
 	    // Liste contenant toutes les cérémonies
@@ -120,6 +121,13 @@ public class Ceremonie {
 	        return listeActeursPresents;
 	    }
 
+	    public void afficherActeursPresents(){
+	    	System.out.println("Les acteurs présents à la cérémonie "+ this.nomCeremonie+" sont :");
+	    	for(Acteur membre: this.listeActeursPresents){
+				System.out.println(membre.getPrenom()+" "+membre.getPrenom());
+				
+				} ;
+	    }
 	    // instance variables - replace the example below with your own
 	    public void setListeActeursPresents(List<Acteur> listeActeursPresents) {
 	        this.listeActeursPresents = listeActeursPresents;
@@ -138,6 +146,7 @@ public class Ceremonie {
 	        this.lieuxCeremonie = lieuxCeremonie;
 	        this.dateDebutCeremonie = dateDebutCeremonie;
 	        this.dateFinCeremonie = dateFinCeremonie;
+	        this.listeActeursPresents = new ArrayList<Acteur>();
 	        
 	        try
 	        {
