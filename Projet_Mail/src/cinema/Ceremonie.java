@@ -2,6 +2,7 @@ package cinema;
 
 
 import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,7 +31,12 @@ public class Ceremonie {
 	    
 	    
 	    
-	    
+	    public void ajouterAuJury(Personne p){
+	    	this.jury.ajouter(p);
+	    }
+	    public void ajouterPrix(Prix p){
+	    	this.listePrix.add(p);
+	    }
 	    
 	    //fonctions IT02 : gestion des invitations (c�t� C�r�monie)
 	    public void inviterPersonne (Personne p){
@@ -146,18 +152,20 @@ public class Ceremonie {
 	    
 	    //Méthodes d'affichage
 	    public void afficherActeursPresents(){
-	    	System.out.println("Les acteurs présents à la cérémonie "+ this.nomCeremonie+" sont :");
+	    	System.out.println("◢ Les acteurs présents à la cérémonie "+ this.nomCeremonie+" sont : ◣");
 	    	for(Acteur membre: this.listeActeursPresents){
-				System.out.println(membre.getPrenom()+" "+membre.getNom());
+				System.out.println("\t"+membre.getPrenom()+" "+membre.getNom());
 				
 				} ;
+			System.out.println("");
 	    }
 	    public void afficherRealPresents(){
-	    	System.out.println("Les acteurs présents à la cérémonie "+ this.nomCeremonie+" sont :");
+	    	System.out.println("◢ Les réalisateurs présents à la cérémonie "+ this.nomCeremonie+" sont : ◣");
 	    	for(Realisateur membre: this.listeRealPresents){
-				System.out.println(membre.getPrenom()+" "+membre.getNom());
+				System.out.println("\t"+membre.getPrenom()+" "+membre.getNom());
 				
 				} ;
+			System.out.println("");
 	    }
 	    
 	    public void description(){
@@ -176,9 +184,23 @@ public class Ceremonie {
 	    	System.out.println(this.getNomCeremonie()+", à "+this.getLieuxCeremonie());
 	    	System.out.println("du "+dateFormat.format(this.getDateDebutCeremonie())+ " au " + dateFormat.format(this.getDateFinCeremonie()));
 	    	System.out.println("==============================================");
+	    	if (this.presidentCeremonie!=null){
+	    		System.out.println("\n◎ Cérémonie présidée par "+this.presidentCeremonie.getPrenom()+" "+this.presidentCeremonie.getNom()+".◎\n");
+	    	}
+	    	this.afficherActeursPresents();
+			this.afficherRealPresents();
+			
+			this.afficherLesPrix();
 	    }
 	    
-	    
+	    public void afficherLesPrix(){
+	    	System.out.println("◢ Les prix décernés à la cérémonie "+ this.nomCeremonie+" sont : ◣");
+	    	for(Prix prix: this.listePrix){
+				System.out.println("\t"+prix.getTitrePrix());
+				
+				} ;
+			System.out.println("");
+	    }
 	    // Constructeurs
 	    // Les constructeurs ne permettent pas de créer une cérémonie incorrecte (sans lieux, date etc)
 	    public Ceremonie(String nomCeremonie, String lieuxCeremonie){
@@ -200,6 +222,7 @@ public class Ceremonie {
 	        this.dateFinCeremonie = dateFinCeremonie;
 	        this.listeActeursPresents = new ArrayList<Acteur>();
 	        this.listeRealPresents = new ArrayList<Realisateur>();
+	        this.jury=new Jury(nomCeremonie,(dateDebutCeremonie.getYear()+1900));
 	        
 	        try
 	        {
@@ -226,7 +249,8 @@ public class Ceremonie {
 	    }
 	     
 	     // Avec invités
-	      public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie, List<Acteur> listeActeursPresents,List<Realisateur> listeRealPresents) 
+	      @SuppressWarnings("deprecation")
+		public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie, List<Acteur> listeActeursPresents,List<Realisateur> listeRealPresents) 
 	      {
 	        this.nomCeremonie = nomCeremonie;
 	        this.lieuxCeremonie = lieuxCeremonie;
@@ -234,6 +258,9 @@ public class Ceremonie {
 	        this.dateFinCeremonie = dateFinCeremonie;
 	        this.listeActeursPresents = listeActeursPresents;
 	        this.listeRealPresents = listeRealPresents;
+	        this.jury=new Jury(nomCeremonie,(dateDebutCeremonie.getYear()+1900));
+	    
+	       
 	        
 	        try
 	        {

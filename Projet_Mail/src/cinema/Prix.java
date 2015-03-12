@@ -24,6 +24,8 @@ public class Prix {
 			this.ceremoniePrix = ceremoniePrix;
 			this.annee = annee;
 			this.titrePrix = titrePrix;
+			
+			ceremoniePrix.ajouterPrix(this);
 		}
 	    
 	    
