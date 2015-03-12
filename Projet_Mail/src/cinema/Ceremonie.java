@@ -69,13 +69,13 @@ public class Ceremonie {
 	    public void recapPrix(){
 	    	Prix p;
 	    	System.out.println("=====================================================");
-	    	System.out.println("=============== fin de la cérémonie =================");
+	    	System.out.println("===============  fin de la cérémonie ================");
+	    	System.out.println("=============== Liste des prix donnés : =============");
 	    	System.out.println("=====================================================");
 	    	
 	    	for(int i=0;i < listePrix.size(); i++){
 	    		
 	    	}
-	    	
 	    }
 	    
 	    public String getNomCeremonie() {
@@ -188,5 +188,41 @@ public class Ceremonie {
 	            Ex.getMessage();
 	        }
 	    }
+
+		public Personne getPresidentCeremonie() {
+			return presidentCeremonie;
+		}
+
+		public void setPresidentCeremonie(Personne presidentCeremonie) {
+			this.presidentCeremonie = presidentCeremonie;
+		}
+
+		public List<Realisateur> getListeRealPresents() {
+			return listeRealPresents;
+		}
+
+		public void setListeRealPresents(List<Realisateur> listeRealPresents) {
+			this.listeRealPresents = listeRealPresents;
+		}
+
+		public static List<Ceremonie> getListeCeremonies() {
+			return listeCeremonies;
+		}
+
+		public static void setListeCeremonies(List<Ceremonie> listeCeremonies) {
+			Ceremonie.listeCeremonies = listeCeremonies;
+		}
+
+		public ArrayList<Prix> getListePrix() {
+			return listePrix;
+		}
+
+		public void setListePrix(ArrayList<Prix> listePrix) {
+			this.listePrix = listePrix;
+		}
+
+		public void setCloture(boolean cloture) {
+			this.cloture = cloture;
+		}
 
 }
