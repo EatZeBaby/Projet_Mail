@@ -22,8 +22,9 @@ public class Prix {
 		public Prix(Ceremonie ceremoniePrix, int annee, String titrePrix) {
 			super();
 			this.ceremoniePrix = ceremoniePrix;
-			this.annee = annee;
+			this.annee = annee +1900;
 			this.titrePrix = titrePrix;
+			this.personneVainqueur=null;
 			
 			ceremoniePrix.ajouterPrix(this);
 		}
@@ -69,7 +70,7 @@ public class Prix {
 
 
 		public void setAnnee(int annee) {
-			this.annee = annee;
+			this.annee = annee + 1900;
 		}
 
 
@@ -90,25 +91,27 @@ public class Prix {
 	    
 	    public void AttribuerPrix(Personne unePersonneVainqueur, Film filmRecompense)
 	    {
-	        // On vérifie que le prix n'est pas déjà attribué
+	    	// On vérifie que le prix n'est pas déjà attribué
 	        try
-	        {      
-	                if (this.getPersonneVainqueur() != null)
+	        {      	
+	                if (this.personneVainqueur == null)
 	                {
+	                	
 	                   this.setPersonneVainqueur(unePersonneVainqueur);
 	                   // On ajoute le prix au film récompensé.
 	                   this.filmRecompense = filmRecompense;
-	                   filmRecompense.getListePrix().add(this);
+	                   //filmRecompense.getListePrix().add(this);
 	                   // Et on ajoute le prix decerné à la cérémonie à laquelle il a été decerné
-	                   this.ceremoniePrix.getListePrix().add(this);
+	                   //this.ceremoniePrix.getListePrix().add(this);
 	                   
 	                   // Enfin on ajoute le prix à la personne qui l'a gagné
 	                   unePersonneVainqueur.ajouterPrix(this);
-	                  
+	                   System.out.println("Le prix "+this.getTitrePrix()+" "+annee +" est attribué à "+this.getPersonneVainqueur().getPrenom()+" "+this.getPersonneVainqueur().getNom()
+	                		   					+ " pour le film "+filmRecompense.getNomFilm());
 	                }   
 	                else
-	                {
-	                	System.out.println("Ce prix est déjà attribué");
+	                {	
+	                	System.out.println("Le prix "+this.getTitrePrix()+" est déjà attribué à "+this.getPersonneVainqueur().getPrenom()+" "+this.getPersonneVainqueur().getNom());
 	                }
 	           
 	        }

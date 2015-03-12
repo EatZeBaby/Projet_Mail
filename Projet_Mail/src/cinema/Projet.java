@@ -75,7 +75,7 @@ public class Projet {
 		@SuppressWarnings("deprecation")
 		Prix MeilleurActeur 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Acteur");
 		Prix MeilleurActrice 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Actrice");
-		Prix MeilleurRéalisateur 	= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Réalisateur");
+		Prix MeilleurRealisateur 	= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Réalisateur");
 		Prix MeilleurScenario 		= new Prix(Cannes,Cannes.getDateDebutCeremonie().getYear(),"Meilleur Scénario");
 		
 		
@@ -99,6 +99,16 @@ public class Projet {
 		
 		
 		Cannes.description();
+		
+		Cannes.attribuerPrix(MeilleurActeur,Matthew,Interstellar);
+		Cannes.attribuerPrix(MeilleurRealisateur,Christopher,Interstellar);
+		Cannes.attribuerPrix(MeilleurActrice,Anne,Elephant);
+		Cannes.attribuerPrix(MeilleurActeur,Tbow,Interstellar);
+		
+		
+		
+		Cannes.cloturerCeremonie();
+		
 		
 		
 		

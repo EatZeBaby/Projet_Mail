@@ -30,7 +30,21 @@ public class Ceremonie {
 	    private ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
 	    
+	    public void attribuerPrix(Prix prix,Personne personne,Film film){
+	    	int val=-1;
+	    	for(int i=0;i<this.listePrix.size();i++){
+	    		if ((this.listePrix.get(i).getTitrePrix()==prix.getTitrePrix())
+	    				&&(this.listePrix.get(i).getAnnee()==prix.getAnnee())){
+	    			val=i;
+	    		}
+	    	}
+	    	if (val==-1){
+	    		System.out.println("Le prix n'existe pas pour cette cérémonie.");
+	    	}else{
+	    		this.listePrix.get(val).AttribuerPrix(personne, film);
+	    	}
 	    
+	    }
 	    public void ajouterAuJury(Personne p){
 	    	this.jury.ajouter(p);
 	    }
@@ -95,12 +109,22 @@ public class Ceremonie {
 	    	
 	    	for(int i=0;i < listePrix.size(); i++){
 	    		p = listePrix.get(i);
-	    		System.out.println("=====================================================");
-	    		System.out.println("Titre prix : " + p.getTitrePrix());
-	    		System.out.println("-----------------------------------------------------");
-	    		System.out.println("Gagnant : " + p.getPersonneVainqueur().getPrenom() + " " + p.getPersonneVainqueur().getNom());
-	    		System.out.println("=====================================================");
+	    		if(p.getPersonneVainqueur()!=null){
+		    		System.out.println("=====================================================");
+		    		System.out.println("Titre prix : " + p.getTitrePrix());
+		    		System.out.println("-----------------------------------------------------");
+		    		System.out.println("Gagnant : " + p.getPersonneVainqueur().getPrenom() + " " + p.getPersonneVainqueur().getNom());
+		    		System.out.println("=====================================================");
+		    	
+	    		}else{
+	    			System.out.println("=====================================================");
+		    		System.out.println("Titre prix : " + p.getTitrePrix());
+		    		System.out.println("-----------------------------------------------------");
+		    		System.out.println("Gagnant : Aucun");
+		    		System.out.println("=====================================================");
+	    		}
 	    	}
+	    		
 	    	
 	    	System.out.println();
 	    }
