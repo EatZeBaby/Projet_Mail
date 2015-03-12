@@ -19,21 +19,25 @@ public class Ceremonie {
 	    private Date dateFinCeremonie;
 	    private boolean cloture;
 	    private List<Acteur> listeActeursPresents;
+
+	    private List<Acteur> listeRealisateursPresents;
+
 	    private List<Realisateur> listeRealPresents;
 	    
+
 	    // Liste contenant toutes les cÃ©rÃ©monies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    //Liste contenant tous les prix accordés
 	    private static ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
-	    //fonctions IT02 : gestion des invitations (côté Cérémonie)
+	    //fonctions IT02 : gestion des invitations (cï¿½tï¿½ Cï¿½rï¿½monie)
 	    public void inviterPersonne (Personne p){
-	    	//L'académie peut refuser une invitation, mais les règles d'étiquette interdisent l'inverse
+	    	//L'acadï¿½mie peut refuser une invitation, mais les rï¿½gles d'ï¿½tiquette interdisent l'inverse
 	    	p.accepterInvitation(this);
 	    }
 	    
 	    public void accepterInvitation(Personne p){
-	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été acceptée");
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a ï¿½tï¿½ acceptï¿½e");
 	    	if (p instanceof Realisateur){
 	    		listeRealPresents.add((Realisateur) p);
 	    	}
@@ -43,7 +47,7 @@ public class Ceremonie {
 	    }
 	    
 	    public void refuserInvitation(Personne p){
-	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été refusée");
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a ï¿½tï¿½ refusï¿½e");
 	    }
 	    
 	    // Getter Setters
@@ -52,12 +56,12 @@ public class Ceremonie {
 	    }
 	    
 	    /**
-	     * Clôture de la cérémonie (cloture = true)
+	     * Clï¿½ture de la cï¿½rï¿½monie (cloture = true)
 	     * et affichage des gagnants
 	     */
 	    public void cloturerCeremonie(){
 	    	this.cloture = true;
-	    	//afficher un récapitulatif de la cérémonie ?
+	    	//afficher un rï¿½capitulatif de la cï¿½rï¿½monie ?
 	    	recapPrix();
 	    }
 	    
