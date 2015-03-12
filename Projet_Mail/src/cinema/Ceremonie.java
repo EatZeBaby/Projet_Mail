@@ -23,6 +23,8 @@ public class Ceremonie {
 	    
 	    // Liste contenant toutes les cÃ©rÃ©monies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
+	    //Liste contenant tous les prix accordés
+	    private static ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
 	    //fonctions IT02 : gestion des invitations (côté Cérémonie)
 	    public void inviterPersonne (Personne p){
@@ -63,6 +65,14 @@ public class Ceremonie {
 	     * affiche le prix, et le nom du gagnant
 	     */
 	    public void recapPrix(){
+	    	Prix p;
+	    	System.out.println("=====================================================");
+	    	System.out.println("=============== fin de la cérémonie =================");
+	    	System.out.println("=====================================================");
+	    	
+	    	for(int i=0;i < listePrix.size(); i++){
+	    		
+	    	}
 	    	
 	    }
 	    
