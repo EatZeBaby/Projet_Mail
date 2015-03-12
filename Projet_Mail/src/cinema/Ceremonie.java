@@ -1,9 +1,11 @@
 package cinema;
 
 
+import java.text.DateFormat;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.lang.Exception;
 
 public class Ceremonie {
@@ -17,7 +19,7 @@ public class Ceremonie {
 	    private Date 				dateFinCeremonie;
 	    private boolean 			cloture;
 	    private List<Acteur>		listeActeursPresents;
-	    private List<Acteur> 		listeRealisateursPresents;
+	   
 	    private List<Realisateur> 	listeRealPresents;
 	    private Jury 				jury;
 	    
@@ -34,17 +36,17 @@ public class Ceremonie {
 	    }
 	    
 	    public void accepterInvitation(Personne p){
-	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a �t� accept�e");
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été acceptée");
 	    	if (p instanceof Realisateur){
 	    		listeRealPresents.add((Realisateur) p);
 	    	}
-	    	else{
+	    	else if (p instanceof Acteur){
 	    		listeActeursPresents.add((Acteur)p);
 	    	}
 	    }
 	    
 	    public void refuserInvitation(Personne p){
-	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a �t� refus�e");
+	    	System.out.println("L'invitation de "+ p.getPrenom() + " " + p.getNom() + " a été refusée");
 	    }
 	    
 	    // Getter Setters
@@ -124,7 +126,14 @@ public class Ceremonie {
 	    public void afficherActeursPresents(){
 	    	System.out.println("Les acteurs présents à la cérémonie "+ this.nomCeremonie+" sont :");
 	    	for(Acteur membre: this.listeActeursPresents){
-				System.out.println(membre.getPrenom()+" "+membre.getPrenom());
+				System.out.println(membre.getPrenom()+" "+membre.getNom());
+				
+				} ;
+	    }
+	    public void afficherRealPresents(){
+	    	System.out.println("Les acteurs présents à la cérémonie "+ this.nomCeremonie+" sont :");
+	    	for(Realisateur membre: this.listeRealPresents){
+				System.out.println(membre.getPrenom()+" "+membre.getNom());
 				
 				} ;
 	    }
@@ -133,7 +142,23 @@ public class Ceremonie {
 	        this.listeActeursPresents = listeActeursPresents;
 	    }
 	    
-	    
+	    public void description(){
+	    	// 1. Choix de la langue
+	    	Locale locale = Locale.getDefault();
+	    	 
+	    	/** 2. Construction du DateFormat en choisiant un format :
+	    	 * SHORT = 01/01/2002
+	    	 * FULL = lundi 1 janvier 2002
+	    	 */
+	    	DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, locale);
+	    	 
+	    	// 3. Affichage
+	    	System.out.println();
+	    	System.out.println("==============================================");
+	    	System.out.println(this.getNomCeremonie()+", à "+this.getLieuxCeremonie());
+	    	System.out.println("du "+dateFormat.format(this.getDateDebutCeremonie())+ " au " + dateFormat.format(this.getDateFinCeremonie()));
+	    	System.out.println("==============================================");
+	    }
 	    // Constructeurs
 	    
 	    // Les constructeurs ne permettent pas de créer une cérémonie incorrecte (sans lieux, date etc)
@@ -147,6 +172,7 @@ public class Ceremonie {
 	        this.dateDebutCeremonie = dateDebutCeremonie;
 	        this.dateFinCeremonie = dateFinCeremonie;
 	        this.listeActeursPresents = new ArrayList<Acteur>();
+	        this.listeRealPresents = new ArrayList<Realisateur>();
 	        
 	        try
 	        {
@@ -173,13 +199,14 @@ public class Ceremonie {
 	    }
 	     
 	     // Avec invités
-	      public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie, List<Acteur> listeActeursPresents) 
+	      public Ceremonie(String nomCeremonie, String lieuxCeremonie, Date dateDebutCeremonie, Date dateFinCeremonie, List<Acteur> listeActeursPresents,List<Realisateur> listeRealPresents) 
 	      {
 	        this.nomCeremonie = nomCeremonie;
 	        this.lieuxCeremonie = lieuxCeremonie;
 	        this.dateDebutCeremonie = dateDebutCeremonie;
 	        this.dateFinCeremonie = dateFinCeremonie;
 	        this.listeActeursPresents = listeActeursPresents;
+	        this.listeRealPresents = listeRealPresents;
 	        
 	        try
 	        {

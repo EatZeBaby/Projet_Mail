@@ -26,6 +26,15 @@ public class Film {
        this.listePrix = new ArrayList<Prix>();
        this.dateFilm = dateFilm;
     }
+    public Film(String NomFilm)
+    {
+       this.nomFilm = NomFilm;
+       this.budgetFilm = -1;
+       this.listeActeurs = new ArrayList<Acteur>();
+       this.listeRealisateurs = new ArrayList<Realisateur>();
+       this.listePrix = new ArrayList<Prix>();
+       
+    }
 
    
     public void testFixture()

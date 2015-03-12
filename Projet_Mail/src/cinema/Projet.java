@@ -18,17 +18,23 @@ public class Projet {
 		
 		//Création de la cérémonie
 		Ceremonie Cannes = new Ceremonie("Festival de Cannes","Cannes", dateDebut, dateFin);
-		
+		Cannes.description();
 		//Création des Acteurs
 		Acteur Jean = new Acteur("Dujardin","Jean",44,"Français");
 		Acteur Tbow = new Acteur("Schlerette","Tbow",63,"Roumain");
 		
-		
+		//Création des Realisateurs
+		Realisateur Gus = new Realisateur("Van Sant","Gus",55,"Américain");
+		Cannes.inviterPersonne(Gus);
 		Cannes.inviterPersonne(Jean);
+		Cannes.inviterPersonne(Tbow);
+		
 		Cannes.afficherActeursPresents();
+		Cannes.afficherRealPresents();
 		
 		
-		Cannes.afficherActeursPresents();
+		
+		
 		
 	}
 	
