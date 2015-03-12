@@ -103,6 +103,9 @@ public class Prix {
 	                   filmRecompense.getListePrix().add(this);
 	                   // Et on ajoute le prix decerné à la cérémonie à laquelle il a été decerné
 	                   this.ceremoniePrix.getListePrix().add(this);
+	                   
+	                   // Enfin on ajoute le prix à la personne qui l'a gagné
+	                   unePersonneVainqueur.ajouterPrix(this);
 	                  
 	                }   
 	                else
