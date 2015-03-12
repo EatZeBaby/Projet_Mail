@@ -6,10 +6,8 @@ public class Acteur extends Personne{
 	
 	
 
-	public Acteur(String n, String p, String a, String nat) {
-		super(n, p, a, nat);
-		
-		
+	public Acteur(String nom, String prenom, int age, String nationalite) {
+		super(nom, prenom, age, nationalite);
 	}
 	
 	public void ajouterFilm(Film f){
