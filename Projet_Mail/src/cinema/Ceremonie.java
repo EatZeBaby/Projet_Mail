@@ -14,7 +14,7 @@ public class Ceremonie {
 	    
 	    private String nomCeremonie;
 	    private String lieuxCeremonie;
-	    private Personne presidentCeremonie;
+	    private Personne presidentCeremonie; 
 	    private Date dateDebutCeremonie;
 	    private Date dateFinCeremonie;
 	    private boolean cloture;
@@ -49,9 +49,21 @@ public class Ceremonie {
 	    	return this.cloture;
 	    }
 	    
+	    /**
+	     * Clôture de la cérémonie (cloture = true)
+	     * et affichage des gagnants
+	     */
 	    public void cloturerCeremonie(){
 	    	this.cloture = true;
 	    	//afficher un récapitulatif de la cérémonie ?
+	    	recapPrix();
+	    }
+	    
+	    /**
+	     * affiche le prix, et le nom du gagnant
+	     */
+	    public void recapPrix(){
+	    	
 	    }
 	    
 	    public String getNomCeremonie() {
