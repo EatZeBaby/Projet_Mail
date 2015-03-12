@@ -26,7 +26,7 @@ public class Ceremonie {
 	    // Liste contenant toutes les cérémonies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    //Liste contenant tous les prix accord�s
-	    private static ArrayList<Prix> listePrix = new ArrayList<Prix>();
+	    private ArrayList<Prix> listePrix = new ArrayList<Prix>();
 	    
 	    //fonctions IT02 : gestion des invitations (c�t� C�r�monie)
 	    public void inviterPersonne (Personne p){
