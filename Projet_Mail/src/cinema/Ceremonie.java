@@ -18,7 +18,7 @@ public class Ceremonie {
 	    private Date dateDebutCeremonie;
 	    private Date dateFinCeremonie;
 	    private List<Acteur> listeActeursPresents;
-	    
+	    private List<Acteur> listeRealisateursPresents;
 	    // Liste contenant toutes les cérémonies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    
