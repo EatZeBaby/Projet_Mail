@@ -10,21 +10,16 @@ public class Ceremonie {
 	
 
 	    // Attributs
-	   
+	   	private String 				nomCeremonie;
+	    private String 				lieuxCeremonie;
+	    private Personne 			presidentCeremonie; 
+	    private Date 				dateDebutCeremonie;
+	    private Date 				dateFinCeremonie;
+	    private boolean 			cloture;
+	    private List<Acteur>		listeActeursPresents;
+	    private List<Acteur> 		listeRealisateursPresents;
+	    private List<Realisateur> 	listeRealPresents;
 	    
-	    private String nomCeremonie;
-	    private String lieuxCeremonie;
-	    private Personne presidentCeremonie; 
-	    private Date dateDebutCeremonie;
-	    private Date dateFinCeremonie;
-	    private boolean cloture;
-	    private List<Acteur> listeActeursPresents;
-
-	    private List<Acteur> listeRealisateursPresents;
-
-	    private List<Realisateur> listeRealPresents;
-	    
-
 	    // Liste contenant toutes les cérémonies
 	    private static List<Ceremonie> listeCeremonies = new ArrayList<Ceremonie>();
 	    
