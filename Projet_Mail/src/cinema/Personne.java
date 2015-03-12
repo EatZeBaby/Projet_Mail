@@ -23,6 +23,7 @@ public class Personne {
 
 	public void accepterInvitation(Ceremonie c){
 		ajouterCeremonie(c);
+		c.accepterInvitation(this);
 	}
 	
 	public void ajouterCeremonie(Ceremonie c){
