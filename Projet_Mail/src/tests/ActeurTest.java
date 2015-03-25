@@ -28,11 +28,9 @@ public class ActeurTest {
 		if ((Jean.getListeFilms().size()!=1)&&(Jean.getListeFilms().get(0).getNomFilm())!=The_Artist.getNomFilm()){
 			fail("Erreur ajout Film"); 
 		}
-		
-		
-		
 	}
 	
+		
 	@Test
 	public void testAjouterPrix(){
 		Ceremonie Cannes = new Ceremonie("Festival de Cannes","Cannes");
@@ -48,10 +46,5 @@ public class ActeurTest {
 		if ((Jean.getListePrix().size()!=1)&&(Jean.getListePrix().get(0).getTitrePrix())!=prix.getTitrePrix()){
 			fail("Erreur ajout Prix"); 
 		}
-	}
-
-	
-	
-	
-
+	}	
 }
