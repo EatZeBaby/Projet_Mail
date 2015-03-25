@@ -28,9 +28,6 @@ public class ActeurTest {
 		if ((Jean.getListeFilms().size()!=1)&&(Jean.getListeFilms().get(0).getNomFilm())!=The_Artist.getNomFilm()){
 			fail("Erreur ajout Film"); 
 		}
-		
-		
-		
 	}
 	
 	@Test
